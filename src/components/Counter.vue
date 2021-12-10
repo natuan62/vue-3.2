@@ -14,6 +14,25 @@ export default {
 import { useAttrs, ref } from 'vue';
 import CounterButtons from './CounterButtons.vue';
 
+// interface Info {
+//   name: string;
+//   age: number;
+// }
+
+// interface Props {
+//   msg?: string;
+//   labels?: string[];
+//   info: Info;
+// }
+
+// const props = withDefaults(defineProps<Props>(), {
+//   msg: 'hello',
+//   limit: 5,
+//   labels: () => ['one', 'two'],
+//   info: () => ({ name: 'John', age: 30 }),
+// });
+
+
 interface Props {
   limit?: number;
 }
@@ -21,6 +40,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   limit: 5,
 });
+
+console.log('props', props);
 
 const attrs = useAttrs();
 
@@ -37,7 +58,6 @@ const addCountEmit = (num: number): void => {
 const resetCountEmit = (): void => {
   count.value = 0;
 };
-
 </script>
 
 <template>

@@ -9,12 +9,17 @@ interface AppInfo {
 const appInfo: AppInfo = reactive({
   name: 'Counter',
 });
+
+const info = {
+  name: 'Counter',
+  age: 18,
+};
 </script>
 
 <template>
   <div class="wrapper">
     <h1>{{ appInfo.name }}</h1>
-    <Counter class="blue"></Counter>
+    <Counter class="blue" :limit="7"></Counter>
   </div>
 </template>
 
